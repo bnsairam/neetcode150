@@ -1,3 +1,4 @@
+#BruteForceApproch
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
         n=len(nums)
@@ -6,3 +7,13 @@ class Solution:
                 if nums[i]==nums[j]:
                     return True
         return False
+#OptimalSolution
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        seen=set()
+        for i in nums:
+            if i in seen:
+                return True
+            seen.add(i)
+        return False
+        
